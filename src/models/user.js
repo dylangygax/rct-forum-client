@@ -12,4 +12,35 @@ export default class UserModel {
     static all() {
         return fetch(`${REACT_APP_API_URL}/users`).then(res => res.json())
     }
+
+    //for creating a new user
+    static create(data) {
+        return fetch(`${REACT_APP_API_URL}/users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then(res => res.json())
+    }
+    
+    //to update user in database. for settings page/ logging likes, matches, etc. 
+    static update(userID, updateObject) {
+        console.log(userID)
+        console.log(updateObject)
+        return fetch(`${REACT_APP_API_URL}/users/${userID}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updateObject)
+        }).then(res => res.json())
+    }
+
+    //to delete user from database
+    static delete(userID) {
+        return fetch(`${REACT_APP_API_URL}/users/${userID}`, {
+            method: "DELETE",
+        }).then(res => res.json())
+    }
 }
