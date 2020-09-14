@@ -1,11 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Router } from 'react-router-dom'
+import './App.css'
+import routes from './config/routes'
 
 function App() {
   return (
     <div className="App">
-        <h1>welcome to rct forum</h1>
+        {/* <Header /> */}
+            {routes}
     </div>
   );
 }
