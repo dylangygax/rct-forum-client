@@ -1,5 +1,11 @@
+body {
+    background-color: black
+}
+
 .App {
   text-align: center;
+  background-color: black;
+  color: aqua;
 }
 
 .App-logo {

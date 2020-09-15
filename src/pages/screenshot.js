@@ -7,6 +7,7 @@ import CommentModel from '../models/comment'
 import BigPicture from '../components/BigPicture'
 import CommentSection from '../components/CommentSection'
 import InfoPanel from '../components/InfoPanel'
+import ContentHeader from '../components/ContentHeader'
 
 const Screenshot = (props) => {
     const [screenshot, setScreenshot] = useState(null)
@@ -26,7 +27,7 @@ const Screenshot = (props) => {
                 console.log(data)
                 setUser(data.user)
             })
-            CommentModel.all(data.screenshot.comment).then(data => {
+            CommentModel.filter(data.screenshot.comments).then(data => {
                 console.log(data)
                 setComments(data.comments)
             })
@@ -36,10 +37,10 @@ const Screenshot = (props) => {
     if (screenshot && user && comments) {
         return(
             <div>
-                {/* <ContentHeader title={screenshot.title} author={user.username}/> */}
+                <ContentHeader title={screenshot.title} author={user.username}/>
                 <div>
                     <div>
-                        <BigPicture title={screenshot.title} author={user.username} image={screenshot.image}/>
+                        <BigPicture image={screenshot.image}/>
                         <CommentSection comments={comments}/>
                     </div>
                     <InfoPanel info={screenshot.story} />
