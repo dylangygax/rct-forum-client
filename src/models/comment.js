@@ -13,6 +13,17 @@ export default class CommentModel {
         return fetch(`${REACT_APP_API_URL}/comments`).then(res => res.json())
     }
     
+    //for filtering comments by some parameter.
+    static filter(filterObject) {
+        return fetch(`${REACT_APP_API_URL}/comments/filter`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(filterObject)
+        }).then(res => res.json())
+    }
+
     //for creating a new comment
     static create(data) {
         return fetch(`${REACT_APP_API_URL}/comments`, {

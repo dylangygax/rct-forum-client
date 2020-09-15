@@ -10,6 +10,7 @@ const CommentSection = (props) => {
                 {props.comments.map((comment, index) => {
                     return <Comment key={index} comment={comment}/>
                 })}
+                <NewComment />
             </ul>
         </div>
     )
