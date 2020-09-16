@@ -3,6 +3,7 @@ import { Switch, Route, Router, BrowserRouter } from "react-router-dom"
 import Home from "../pages/home"
 import User from "../pages/user"
 import Screenshot from "../pages/screenshot"
+import Screenshots from "../pages/screenshots"
 import Park from '../pages/park'
 
 export default(
@@ -11,7 +12,7 @@ export default(
             <Route exact path="/" component={Home} />
             {/* <Route path="/parks" component={Parks}/> */}
             <Route path="/parks/:id" component={Park}/>
-            {/* <Route path="/screenshots" component={Screenshots}/> */}
+            <Route path="/screenshots" component={Screenshots}/>
             <Route path="/screenshots/:id" component={Screenshot}/> 
             <Route path="/users/:id" component={User}/> 
             {/* 404 route */}
