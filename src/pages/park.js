@@ -34,15 +34,19 @@ const Park = (props) => {
     const fetchData = () => {
         ParkModel.show(props.match.params.id).then(data => {
             console.log(data)
-            setPark(data.park)
-            UserModel.show(data.park.user).then(data => {
-                console.log(data)
-                setUser(data.user)
-            })
-            CommentModel.filter(data.park.comments).then(data => {
-                console.log(data)
-                setComments(data.comments)
-            })
+            if (data.park) {
+                setPark(data.park)
+                UserModel.show(data.park.user).then(data => {
+                    console.log(data)
+                    setUser(data.user)
+                })
+                CommentModel.filter(data.park.comments).then(data => {
+                    console.log(data)
+                    setComments(data.comments)
+                })
+            } else {
+                props.history.push('/lost')
+            }
         })
     }
 
