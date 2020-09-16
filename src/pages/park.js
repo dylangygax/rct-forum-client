@@ -49,10 +49,10 @@ const Park = (props) => {
     if (park && user && comments) {
         return(
             <Wrapper>
-                <ContentHeader title={park.parkName} author={user.username}/>
+                <ContentHeader title={park.title} author={user.username}/>
                 <Columns>
                     <div>
-                        <BigPicture image={park.overviewPic}/>
+                        <BigPicture image={park.image}/>
                         <CommentSection comments={comments}/>
                     </div>
                     <InfoPanel info={park.story} />

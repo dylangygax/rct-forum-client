@@ -5,12 +5,13 @@ import User from "../pages/user"
 import Screenshot from "../pages/screenshot"
 import Screenshots from "../pages/screenshots"
 import Park from '../pages/park'
+import Parks from '../pages/parks'
 
 export default(
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={Home} />
-            {/* <Route path="/parks" component={Parks}/> */}
+            <Route path="/parks" component={Parks}/>
             <Route path="/parks/:id" component={Park}/>
             <Route exact path="/screenshots" component={Screenshots}/>
             <Route path="/screenshots/:id" component={Screenshot}/> 
