@@ -30,7 +30,7 @@ const Parks = (props) => {
         return(
             <Wrapper>
                 <ContentHeader title="Parks!"/>
-                <Grid content={parks}/>
+                <Grid content={parks} contentType="parks"/>
             </Wrapper>
         )
     } else {

@@ -16,7 +16,7 @@ const Title = styled.a`
 `
 
 const SmallPicture = (props) => {
-    const link = `/screenshots/${props.id}`
+    const link = `/${props.contentType}/${props.id}`
     return(
         <Wrapper>
             <Title href={link}>{props.title}</Title>

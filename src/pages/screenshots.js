@@ -30,7 +30,7 @@ const Screenshots = (props) => {
         return(
             <Wrapper>
                 <ContentHeader title="Screenshots"/>
-                <Grid content={screenshots}/>
+                <Grid content={screenshots} contentType="screenshots"/>
             </Wrapper>
         )
     } else {

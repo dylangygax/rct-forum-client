@@ -51,9 +51,9 @@ const User = (props) => {
                 <Columns>
                     <div>
                         <h2>My parks:</h2>
-                        <Grid content={parks}/>
+                        <Grid content={parks} contentType="parks"/>
                         <h2>My screenshots:</h2>
-                        <Grid content={screenshots}/>
+                        <Grid content={screenshots} contentType="screenshots"/>
                     </div>
                     <InfoPanel info={user.bio} />
                 </Columns>

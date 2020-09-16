@@ -44,9 +44,9 @@ const Home = (props) => {
                 <Columns>
                     <div>
                         <h2>New Parks:</h2>
-                        <Grid content={parks}/>
+                        <Grid content={parks} contentType="parks"/>
                         <h2>New Screenshots:</h2>
-                        <Grid content={screenshots}/>
+                        <Grid content={screenshots} contentType="screenshots"/>
                     </div>
                     <InfoPanel info="Welcome to RCT Island, your oasis for quality Rollercoaster Tycoon Content!" />
                 </Columns>
