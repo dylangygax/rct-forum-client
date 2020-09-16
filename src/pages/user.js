@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import UserModel from '../models/user'
 import styled from 'styled-components'
+
+import UserModel from '../models/user'
+import ParkModel from '../models/park'
+import ScreenshotModel from '../models/screenshot'
 
 import Grid from '../components/Grid'
 import ContentHeader from '../components/ContentHeader'
 import InfoPanel from '../components/InfoPanel'
-import ParkModel from '../models/park'
-import ScreenshotModel from '../models/screenshot'
 
 const Wrapper = styled.div`
     display: flex;
