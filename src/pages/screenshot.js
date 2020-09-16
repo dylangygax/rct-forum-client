@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import styled from 'styled-components'
 
 import ScreenshotModel from '../models/screenshot'
 import UserModel from '../models/user'
@@ -8,6 +9,16 @@ import BigPicture from '../components/BigPicture'
 import CommentSection from '../components/CommentSection'
 import InfoPanel from '../components/InfoPanel'
 import ContentHeader from '../components/ContentHeader'
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+const Columns = styled.div`
+    display: flex;
+`
+
 
 const Screenshot = (props) => {
     const [screenshot, setScreenshot] = useState(null)
@@ -36,16 +47,16 @@ const Screenshot = (props) => {
 
     if (screenshot && user && comments) {
         return(
-            <div>
+            <Wrapper>
                 <ContentHeader title={screenshot.title} author={user.username}/>
-                <div>
+                <Columns>
                     <div>
                         <BigPicture image={screenshot.image}/>
                         <CommentSection comments={comments}/>
                     </div>
                     <InfoPanel info={screenshot.story} />
-                </div>
-            </div>
+                </Columns>
+            </Wrapper>
         )
     } else {
         return(

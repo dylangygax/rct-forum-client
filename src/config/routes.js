@@ -14,6 +14,7 @@ export default(
             {/* <Route path="/screenshots" component={Screenshots}/> */}
             <Route path="/screenshots/:id" component={Screenshot}/> 
             <Route path="/users/:id" component={User}/> 
+            {/* 404 route */}
         </Switch>
     </BrowserRouter>
 )
