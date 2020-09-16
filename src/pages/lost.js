@@ -5,8 +5,7 @@ import ContentHeader from '../components/ContentHeader'
 const Lost = (props) => {
     return(
         <div>
-            <ContentHeader title="looks like you took a wrong turn...."/>
-            <a href="/">head on home</a>
+            <ContentHeader title="looks like you took a wrong turn...." subtitle="hit one of the above links to find your way again"/>
         </div>
     )
 }

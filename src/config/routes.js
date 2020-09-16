@@ -7,6 +7,7 @@ import Screenshots from "../pages/screenshots"
 import Park from '../pages/park'
 import Parks from '../pages/parks'
 import Lost from '../pages/lost'
+import About from "../pages/about"
 
 export default(
     <BrowserRouter>
@@ -17,6 +18,7 @@ export default(
             <Route exact path="/screenshots" component={Screenshots}/>
             <Route path="/screenshots/:id" component={Screenshot}/> 
             <Route path="/users/:id" component={User}/> 
+            <Route exact path="/about" component={About}/>
             <Route path="/:id" component={Lost}/>
         </Switch>
     </BrowserRouter>
