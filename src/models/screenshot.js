@@ -12,6 +12,17 @@ export default class ScreenshotModel {
     static all() {
         return fetch(`${REACT_APP_API_URL}/screenshots`).then(res => res.json())
     }
+
+    //for filtering parks by some parameter.
+    static filter(filterObject) {
+        return fetch(`${REACT_APP_API_URL}/screenshots/filter`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(filterObject)
+        }).then(res => res.json())
+    }
     
     //for creating a new screenshot
     static create(data) {

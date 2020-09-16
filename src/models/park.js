@@ -13,6 +13,17 @@ export default class ParkModel {
         return fetch(`${REACT_APP_API_URL}/parks`).then(res => res.json())
     }
     
+    //for filtering parks by some parameter.
+    static filter(filterObject) {
+        return fetch(`${REACT_APP_API_URL}/parks/filter`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(filterObject)
+        }).then(res => res.json())
+    }
+
     //for creating a new park
     static create(data) {
         return fetch(`${REACT_APP_API_URL}/parks`, {
