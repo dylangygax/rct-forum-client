@@ -1,9 +1,11 @@
 import React from 'react'
 
+import ContentHeader from '../components/ContentHeader'
+
 const Lost = (props) => {
     return(
         <div>
-            <h1>looks like you took a wrong turn....</h1>
+            <ContentHeader title="looks like you took a wrong turn...."/>
             <a href="/">head on home</a>
         </div>
     )

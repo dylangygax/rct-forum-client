@@ -9,7 +9,7 @@ const ContentHeader = (props) => {
     return(
         <Wrapper>
             <h1>{props.title}</h1>
-            <h2>{props.author}</h2>
+            <h2>{props.subtitle}</h2>
         </Wrapper>
     )
 }

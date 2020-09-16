@@ -20,7 +20,9 @@ const SmallPicture = (props) => {
     return(
         <Wrapper>
             <Title href={link}>{props.title}</Title>
-            <Image src={props.image}/>
+            <a href={link}>
+                <Image src={props.image}/>
+            </a>
         </Wrapper>
     )
 }

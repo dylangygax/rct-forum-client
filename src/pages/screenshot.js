@@ -48,7 +48,7 @@ const Screenshot = (props) => {
     if (screenshot && user && comments) {
         return(
             <Wrapper>
-                <ContentHeader title={screenshot.title} author={user.username}/>
+                <ContentHeader title={screenshot.title} subtitle={user.username}/>
                 <Columns>
                     <div>
                         <BigPicture image={screenshot.image}/>

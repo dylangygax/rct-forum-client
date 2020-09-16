@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.p`
     width: 40vw;
     text-align: left;
-    margin: 2vh 5vw;
+    margin: 10vh 5vw;
 `
 
 const InfoPanel = (props) => {
