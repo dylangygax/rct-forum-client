@@ -33,15 +33,19 @@ const Screenshot = (props) => {
     const fetchData = () => {
         ScreenshotModel.show(props.match.params.id).then(data => {
             console.log(data)
-            setScreenshot(data.screenshot)
-            UserModel.show(data.screenshot.user).then(data => {
-                console.log(data)
-                setUser(data.user)
-            })
-            CommentModel.filter(data.screenshot.comments).then(data => {
-                console.log(data)
-                setComments(data.comments)
-            })
+            if (data.screenshot) {
+                setScreenshot(data.screenshot)
+                UserModel.show(data.screenshot.user).then(data => {
+                    console.log(data)
+                    setUser(data.user)
+                })
+                CommentModel.filter(data.screenshot.comments).then(data => {
+                    console.log(data)
+                    setComments(data.comments)
+                })
+            } else {
+                props.history.push('/lost')
+            }
         })
     }
 

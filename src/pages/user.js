@@ -31,15 +31,19 @@ const User = (props) => {
     const fetchData = () => {
         UserModel.show(props.match.params.id).then(data => {
             console.log(data)
-            setUser(data.user)
-            ParkModel.filter(data.user.parks).then(data => {
-                console.log(data)
-                setParks(data.parks)
-            })
-            ScreenshotModel.filter(data.user.screenshots).then(data => {
-                console.log(data)
-                setScreenshots(data.screenshots)
-            })
+            if (data.user) {
+                setUser(data.user)
+                ParkModel.filter(data.user.parks).then(data => {
+                    console.log(data)
+                    setParks(data.parks)
+                })
+                ScreenshotModel.filter(data.user.screenshots).then(data => {
+                    console.log(data)
+                    setScreenshots(data.screenshots)
+                })
+            } else {
+                props.history.push('/lost')
+            }
         })
     }
 
