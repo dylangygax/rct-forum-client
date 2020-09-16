@@ -12,7 +12,7 @@ export default(
             <Route exact path="/" component={Home} />
             {/* <Route path="/parks" component={Parks}/> */}
             <Route path="/parks/:id" component={Park}/>
-            <Route path="/screenshots" component={Screenshots}/>
+            <Route exact path="/screenshots" component={Screenshots}/>
             <Route path="/screenshots/:id" component={Screenshot}/> 
             <Route path="/users/:id" component={User}/> 
             {/* 404 route */}
