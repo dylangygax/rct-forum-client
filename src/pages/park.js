@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import styled from 'styled-components'
 
 import ParkModel from '../models/park'
 import ScreenshotModel from '../models/screenshot'
@@ -9,6 +10,15 @@ import BigPicture from '../components/BigPicture'
 import CommentSection from '../components/CommentSection'
 import InfoPanel from '../components/InfoPanel'
 import ContentHeader from '../components/ContentHeader'
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+const Columns = styled.div`
+    display: flex;
+`
 
 const Park = (props) => {
     const [park, setPark] = useState(null)
@@ -38,16 +48,16 @@ const Park = (props) => {
 
     if (park && user && comments) {
         return(
-            <div>
+            <Wrapper>
                 <ContentHeader title={park.parkName} author={user.username}/>
-                <div>
+                <Columns>
                     <div>
                         <BigPicture image={park.overviewPic}/>
                         <CommentSection comments={comments}/>
                     </div>
                     <InfoPanel info={park.story} />
-                </div>
-            </div>
+                </Columns>
+            </Wrapper>
         )
     } else {
         return(
