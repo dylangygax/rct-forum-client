@@ -51,15 +51,13 @@ const EditUser = (props) => {
                         const editLink = `/myrct/parks/${park._id}/edit`
                         return <div key={index}>
                             <p>{park.title}: <a href={editLink}>Edit</a></p>
-                            
                         </div>
                 })}
                 <h3>Your Screenshots</h3>
                 {screenshots.map((screenshot, index) => {
                         const editLink = `/myrct/screenshots/${screenshot._id}/edit`
                         return <div key={index}>
-                            <p>{screenshot.title}: <a href={editLink}>Edit</a></p>
-                            
+                            <p>{screenshot.title}: <a href={editLink}>Edit</a></p>                            
                         </div>
                 })}
             </div>

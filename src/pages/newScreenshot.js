@@ -47,7 +47,7 @@ const NewScreenshot = (props) => {
                 <p>Park:</p>
                     <select>
                         {parks.map((park, index) => {
-                            return <option key={index} text={park.title} value={park._id}/>
+                            return <option key={index} value={park._id}>{park.title}</option>
                         })}
                     </select>
                 <input type="submit" value="Upload"/>

@@ -50,6 +50,7 @@ export default class ScreenshotModel {
 
     //to delete screenshot from database
     static delete(screenshotID) {
+        console.log('deletin')
         return fetch(`${REACT_APP_API_URL}/screenshots/${screenshotID}`, {
             method: "DELETE",
         }).then(res => res.json())

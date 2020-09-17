@@ -15,17 +15,17 @@ const Wrapper = styled.div`
 `
 
 const CommentSection = (props) => {
-    const [comments, setComments] = useState(null)
+    const [comments, setComments] = useState(props.comments)
     const [newComment, setNewComment] = useState(null)
     
     useEffect(() => {
         fetchData()
-    }, [newComment])
+    }, [])
 
     const fetchData = async () => {
         console.log(props.comments)
         //for each comment in comments, get user's username from DB and append it to the comment object as username
-        const commentsWithUsernames = await Promise.all(props.comments.map(async comment => {
+        const commentsWithUsernames = await Promise.all(comments.map(async comment => {
             const user = await UserModel.show(comment.user)
             console.log(user)
             console.log(user.user.username)
@@ -54,11 +54,15 @@ const CommentSection = (props) => {
         }
         console.log(newComment)
         const createdComment = await CommentModel.create(newComment)
-        const foundUser = await UserModel.show(createComment.user)
+        const foundUser = await UserModel.show(createdComment.comment.user)
+        console.log("just a log on line 58")
         //console.log({body: createdComment.body, user: createdComment.user, username: foundUser.username})
         //setComments([...comments, {body: newComment.body, user: newComment.user, username: newComment.username}])
-        setNewComment(newComment)
+        //setNewComment(createdComment)
+        console.log(foundUser)
+        setComments([...comments, {body: createdComment.comment.body, user: createdComment.comment.user, username: foundUser.user.username}])
         //fetchData()
+        //props.history.push('/')
     }
 
     if (comments) {
