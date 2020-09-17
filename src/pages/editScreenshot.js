@@ -64,13 +64,13 @@ const EditScreenshot = (props) => {
                 <p>Title:</p><input type="text" defaultValue={screenshot.title} name="title"/><br />
                 <p>Image:</p><input type="text" defaultValue={screenshot.image} name="image"/><br />
                 <p>Story:</p><input type="text" defaultValue={screenshot.story} name="story"/><br />
-                <p>Park:</p>
+                {/* <p>Park:</p>
                     <select>
                         {parks.map((park, index) => {
                             return <option key={index} text={park.title} value={park._id}/>
                         })}
-                    </select>
-                <input type="submit" value="Upload"/>
+                    </select> */}
+                <input type="submit" value="Update"/>
             </form>
         )
     } else {
