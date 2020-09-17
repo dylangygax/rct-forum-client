@@ -8,6 +8,9 @@ import Park from '../pages/park'
 import Parks from '../pages/parks'
 import Lost from '../pages/lost'
 import About from "../pages/about"
+import Login from "../pages/login"
+import Logout from "../pages/logout"
+import Protected from "../pages/protected"
 
 export default(
     <BrowserRouter>
@@ -19,6 +22,9 @@ export default(
             <Route path="/screenshots/:id" component={Screenshot}/> 
             <Route path="/users/:id" component={User}/> 
             <Route exact path="/about" component={About}/>
+            <Route exact path="/login" component={Login}/>
+            <Route exact path="/logout" component={Logout}/>
+            <Route path="/myrct" component={Protected}/>
             <Route path="/:id" component={Lost}/>
         </Switch>
     </BrowserRouter>

@@ -10,7 +10,7 @@ function App() {
         <Header />
             {routes}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

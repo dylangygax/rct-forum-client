@@ -25,10 +25,11 @@ const CommentSection = (props) => {
         const commentsWithUsernames = await Promise.all(props.comments.map(async comment => {
             const user = await UserModel.show(comment.user)
             console.log(user)
+            console.log(user.user.username)
             console.log(comment)
-            comment = await {...comment, username: user.username}
-            console.log(comment)
-            const newComment = await {body: comment.body, user: comment.user, username: user.username}
+            // comment = {...comment, username: user.user.username}
+            // console.log(comment)
+            const newComment = await {body: comment.body, user: comment.user, username: user.user.username}
             return newComment
         }))
         console.log(commentsWithUsernames)
@@ -41,7 +42,7 @@ const CommentSection = (props) => {
                 <h2>Comments:</h2>
                 <ul>
                     {comments.map((comment, index) => {
-                        return <Comment key={index} comment={comment} user={comment.user}/>
+                        return <Comment key={index} comment={comment} user={comment.username}/>
                     })}
                     <NewComment />
                 </ul>

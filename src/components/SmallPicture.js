@@ -2,17 +2,24 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     width: 14vw;
     margin: 2vh 1vw;
 `
-const Image = styled.img`
+const Image = styled.div`
     width: 15vw;
+    height: 10vw;
     border: 5px solid darkgray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 `
+//Consider: user metadata of image to find width and height
 
 const Title = styled.a`
-    height: 3vh;
+    height: 5vh;
+    color: yellow;
 `
 
 const SmallPicture = (props) => {
@@ -21,7 +28,7 @@ const SmallPicture = (props) => {
         <Wrapper>
             <Title href={link}>{props.title}</Title>
             <a href={link}>
-                <Image src={props.image}/>
+                <Image style={{backgroundImage: "url("+props.image+")"}}/>
             </a>
         </Wrapper>
     )
