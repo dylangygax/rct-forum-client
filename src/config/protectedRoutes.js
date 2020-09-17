@@ -2,6 +2,7 @@ import React from "react"
 import { Switch, Route, Router, BrowserRouter } from "react-router-dom"
 import DeletePark from "../pages/deletePark"
 import DeleteScreenshot from "../pages/deleteScreenshot"
+import DeleteUser from "../pages/deleteUser"
 import EditPark from "../pages/editPark"
 import EditScreenshot from "../pages/editScreenshot"
 import EditUser from "../pages/editUser"
@@ -15,6 +16,7 @@ export default(
     <BrowserRouter>
         <Switch>
             <Route exact path="/myrct" component={EditUser}/>
+            <Route exact path="/myrct/deleteaccount" component={DeleteUser}/>
             <Route exact path="/myrct/e" component={Example}/>
             <Route exact path="/myrct/newscreenshot" component={NewScreenshot}/>
             <Route exact path="/myrct/newpark" component={NewPark}/>

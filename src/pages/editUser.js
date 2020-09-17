@@ -60,6 +60,8 @@ const EditUser = (props) => {
                             <p>{screenshot.title}: <a href={editLink}>Edit</a></p>                            
                         </div>
                 })}
+                <br />
+                <a href="/myrct/deleteaccount">Delete Account</a>
             </div>
         )
     } else {
