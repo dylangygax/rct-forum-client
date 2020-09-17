@@ -56,7 +56,7 @@ const Screenshot = (props) => {
                 <Columns>
                     <div>
                         <BigPicture image={screenshot.image}/>
-                        <CommentSection comments={comments}/>
+                        <CommentSection comments={comments} contentType="screenshot" contentId={screenshot._id}/>
                     </div>
                     <InfoPanel info={screenshot.story} />
                 </Columns>
