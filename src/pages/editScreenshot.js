@@ -11,7 +11,7 @@ const EditScreenshot = (props) => {
     const [user, setUser] = useState(null)
     
     useEffect(() => {
-        console.log("here")
+        //console.log("here")
         fetchData()
     }, [])
 
