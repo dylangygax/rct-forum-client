@@ -57,7 +57,7 @@ const Park = (props) => {
                 <Columns>
                     <div>
                         <BigPicture image={park.image}/>
-                        <CommentSection comments={comments}/>
+                        <CommentSection comments={comments} contentType="park" contentId={park._id}/>
                     </div>
                     <InfoPanel info={park.story} />
                 </Columns>

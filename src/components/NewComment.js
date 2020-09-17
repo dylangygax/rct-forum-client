@@ -12,11 +12,16 @@ const NewComment = (props) => {
         console.log(event.target.comment.value)
         const newComment = {
             user: "5f62533c8510091624f74693",//temporarily hardcoded
-            body: event.target.comment.value,
+            body: event.target.comment.value
         }
+        console.log(props.contentId)
+        console.log(props.contentType)
         if (props.contentType === "screenshot") {
             newComment["screenshot"] = props.contentId
+        } else if (props.contentType === "park") {
+            newComment["park"] = props.contentId
         }
+        //newComment[props.contentType] = props.contentId
         console.log(newComment)
         CommentModel.create(newComment)
     }

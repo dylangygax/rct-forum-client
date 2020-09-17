@@ -49,6 +49,8 @@ const CommentSection = (props) => {
         }
         if (props.contentType === "screenshot") {
             newComment["screenshot"] = props.contentId
+        } else if (props.contentType === "park") {
+            newComment["park"] = props.contentId
         }
         console.log(newComment)
         const createdComment = await CommentModel.create(newComment)
