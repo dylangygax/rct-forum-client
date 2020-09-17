@@ -60,18 +60,21 @@ const EditPark = (props) => {
     
     if (park && user && screenshots) {
         return(
-            <form onSubmit={handleSubmit}>
-                <p>Title:</p><input type="text" defaultValue={park.title} name="title"/><br />
-                <p>Image:</p><input type="text" defaultValue={park.image} name="image"/><br />
-                <p>Story:</p><input type="text" defaultValue={park.story} name="story"/><br />
-                {/* <p>Park:</p>
-                    <select>
-                        {parks.map((park, index) => {
-                            return <option key={index} text={park.title} value={park._id}/>
-                        })}
-                    </select> */}
-                <input type="submit" value="Update"/>
-            </form>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <p>Title:</p><input type="text" defaultValue={park.title} name="title"/><br />
+                    <p>Image:</p><input type="text" defaultValue={park.image} name="image"/><br />
+                    <p>Story:</p><input type="text" defaultValue={park.story} name="story"/><br />
+                    {/* <p>Park:</p>
+                        <select>
+                            {parks.map((park, index) => {
+                                return <option key={index} text={park.title} value={park._id}/>
+                            })}
+                        </select> */}
+                    <input type="submit" value="Update"/>
+                </form>
+                <a href={`/myrct/parks/${park._id}/delete`}>Delete Park</a>
+            </div>
         )
     } else {
         return(

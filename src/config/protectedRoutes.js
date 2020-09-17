@@ -1,5 +1,6 @@
 import React from "react"
 import { Switch, Route, Router, BrowserRouter } from "react-router-dom"
+import DeletePark from "../pages/deletePark"
 import DeleteScreenshot from "../pages/deleteScreenshot"
 import EditPark from "../pages/editPark"
 import EditScreenshot from "../pages/editScreenshot"
@@ -21,6 +22,7 @@ export default(
             <Route path="/myrct/screenshots/:id/edit" component={EditScreenshot}/>
             <Route path="/myrct/screenshots/:id/delete" component={DeleteScreenshot}/>
             <Route path="/myrct/parks/:id/edit" component={EditPark}/>
+            <Route path="/myrct/parks/:id/delete" component={DeletePark}/>
         </Switch>
     </BrowserRouter>
 )
