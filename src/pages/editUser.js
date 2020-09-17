@@ -42,7 +42,7 @@ const EditUser = (props) => {
             <div>
                 <h1>Settings</h1>
                 <form onSubmit={handleSubmit}>
-                    <p>Username:</p><input type="text" defaultValue={user.username} name="username"/><br />
+                    {/* <p>Username:</p><input type="text" defaultValue={user.username} name="username"/><br /> */}
                     <p>Bio:</p><input type="text" defaultValue={user.bio} name="bio"/><br />
                     <input type="submit" value="Update"/>
                 </form>

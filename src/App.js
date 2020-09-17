@@ -3,12 +3,15 @@ import { Router } from 'react-router-dom'
 import './App.css'
 import routes from './config/routes'
 import Header from './components/Header'
+import {UserContext, UserContextProvider} from './UserContext'
 
 function App() {
   return (
     <div className="App">
-        <Header />
+        <UserContextProvider>
+            <Header />
             {routes}
+        </UserContextProvider>
     </div>
   )
 }
