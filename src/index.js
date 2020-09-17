@@ -7,13 +7,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Auth0Provider
-    domain="dev-xyo30cf4.us.auth0.com"
-    clientId="1HXNeFhmpidIurQRR0LHhpTdVXwVd5LC"
-    redirectUri="https://localhost:3000/"
-  >
     <App />
-  </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

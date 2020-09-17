@@ -5,7 +5,7 @@ import LogoutButton from '../components/LogoutButton'
 const Logout = (props) => {
     return(
         <div>
-            <LogoutButton />
+            <p>logout page...</p>
         </div>
     )
 }
