@@ -55,7 +55,12 @@ const User = (props) => {
                 <Columns>
                     <div>
                         <h2>My parks:</h2>
+                        {parks.length ? (
                         <Grid content={parks} contentType="parks"/>
+                        ) : (
+                            <p>no parks ....</p>
+                        )}
+                        
                         <h2>My screenshots:</h2>
                         <Grid content={screenshots} contentType="screenshots"/>
                     </div>
