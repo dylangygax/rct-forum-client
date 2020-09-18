@@ -34,7 +34,7 @@ const Register = (props) => {
             <p>Username</p>
             <input type="text" name="username" value={username} onChange={handleUsername}/>
             <p>Password</p>
-            <input type="text" name="password" value={password} onChange={handlePassword}/>
+            <input type="password" name="password" value={password} onChange={handlePassword}/>
             <input type="submit" value="Register"/>
         </form>
     )
