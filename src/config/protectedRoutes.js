@@ -17,7 +17,6 @@ export default(
         <Switch>
             <Route exact path="/myrct" component={EditUser}/>
             <Route exact path="/myrct/deleteaccount" component={DeleteUser}/>
-            <Route exact path="/myrct/e" component={Example}/>
             <Route exact path="/myrct/newscreenshot" component={NewScreenshot}/>
             <Route exact path="/myrct/newpark" component={NewPark}/>
             <Route exact path="/myrct/profile" component={Profile}/>

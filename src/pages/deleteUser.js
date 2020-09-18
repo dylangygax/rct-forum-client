@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import styled from 'styled-components'
 
 import UserModel from '../models/user'
 
 import SmallPicture from '../components/SmallPicture'
+import {UserContext} from '../UserContext'
 
 const DeleteUser = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [user, setUser] = useState(null)
     
     useEffect(() => {
@@ -13,7 +15,7 @@ const DeleteUser = (props) => {
     }, [])
 
     const fetchData = () => {
-        const loggedInUserId = "5f63d0971fb5ce4358dae858"//temporary hardcode
+        const loggedInUserId = loggedInUser//"5f63d0971fb5ce4358dae858"//temporary hardcode
         UserModel.show(loggedInUserId).then(data => {
             console.log(data)
             setUser(data.user)
@@ -24,9 +26,11 @@ const DeleteUser = (props) => {
         props.history.push(`/myrct`)
     }
 
-    const handleDelete = () => {
+    const handleDelete = (event) => {
+        event.preventDefault()
         UserModel.delete(user._id).then(data => {
             console.log(data)
+            localStorage.clear()
             props.history.push(`/`)
         })        
     }

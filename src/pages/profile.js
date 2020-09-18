@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import styled from 'styled-components'
 
 import UserModel from '../models/user'
@@ -8,6 +8,7 @@ import ScreenshotModel from '../models/screenshot'
 import Grid from '../components/Grid'
 import ContentHeader from '../components/ContentHeader'
 import InfoPanel from '../components/InfoPanel'
+import {UserContext} from '../UserContext'
 
 const Wrapper = styled.div`
     display: flex;
@@ -19,6 +20,8 @@ const Columns = styled.div`
 `
 
 const Profile = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
     const [user, setUser] = useState(null)
     const [parks, setParks] = useState(null)
     const [screenshots, setScreenshots] = useState(null)
@@ -29,7 +32,7 @@ const Profile = (props) => {
     }, [])
 
     const fetchData = () => {
-        const userId = "5f62533c8510091624f74693"
+        const userId = loggedInUser
         UserModel.show(userId).then(data => {
             console.log(data)
             if (data.user) {

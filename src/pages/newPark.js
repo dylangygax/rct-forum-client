@@ -1,11 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import styled from 'styled-components'
 
 import ParkModel from '../models/park'
 import ScreenshotModel from '../models/screenshot'
 import UserModel from '../models/user'
 
+import {UserContext} from '../UserContext'
+
 const NewPark = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
     const [screenshots, setScreenshots] = useState(null)
     
     useEffect(() => {
@@ -13,7 +17,7 @@ const NewPark = (props) => {
     }, [])
 
     const fetchData = () => {
-        const user = "5f62533c8510091624f74693"
+        const user = loggedInUser//"5f62533c8510091624f74693"
         UserModel.show(user).then(data => {
             console.log(data)
             ScreenshotModel.filter(data.user.screenshots).then(data => {

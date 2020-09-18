@@ -1,11 +1,14 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import styled from 'styled-components'
+import {UserContext} from '../UserContext'
 
 import ParkModel from '../models/park'
 import ScreenshotModel from '../models/screenshot'
 import UserModel from '../models/user'
 
 const EditPark = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
     const [park, setPark] = useState(null)
     const [screenshots, setScreenshots] = useState(null)
     const [user, setUser] = useState(null)
@@ -19,7 +22,7 @@ const EditPark = (props) => {
         ParkModel.show(props.match.params.id).then(data => {
             console.log(data)
             //setScreenshot(data.screenshot)
-            const loggedInUser = "5f62533c8510091624f74693"//temporarily hardcoded. should be the logged in user
+            //const loggedInUser = "5f62533c8510091624f74693"//temporarily hardcoded. should be the logged in user
             if (data.park && loggedInUser === data.park.user) {
                 setPark(data.park)
                 UserModel.show(data.park.user).then(data => {
