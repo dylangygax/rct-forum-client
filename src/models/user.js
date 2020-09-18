@@ -58,4 +58,12 @@ export default class UserModel {
             body: JSON.stringify(credentials)
         }).then(res => res.json())
     }
+
+    //logout
+    static logout() {
+        return fetch(`${REACT_APP_API_URL}/auth/logout`, {
+            method: "DELETE",
+            credentials: 'include'
+        }).then(res => res.json())
+    }
 }

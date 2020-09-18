@@ -1,24 +1,28 @@
 //USER DASHBOARD
 //edit: username, bio. lists of screenshots, park. for each screenshot/park list title and edit button (a tag).
 
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import styled from 'styled-components'
+import { UserContext } from '../UserContext'
 
 import ParkModel from '../models/park'
 import ScreenshotModel from '../models/screenshot'
 import UserModel from '../models/user'
 
 const EditUser = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
     const [user, setUser] = useState(null)
     const [parks, setParks] = useState(null)
     const [screenshots, setScreenshots] = useState(null)
 
     useEffect(() => {
+        console.log(loggedInUser)
         fetchData()
     }, [])
 
     const fetchData = () => {
-        const loggedInUserId = "5f62533c8510091624f74693"
+        const loggedInUserId = loggedInUser//"5f62533c8510091624f74693"
         UserModel.show(loggedInUserId).then(data => {
             console.log(data)
             setUser(data.user)
@@ -35,6 +39,18 @@ const EditUser = (props) => {
 
     const handleSubmit = () => {
         console.log("in handle submit")
+    }
+
+    const handleLogout = (event) => {
+        event.preventDefault()
+        console.log('in handle logout')
+        UserModel.logout()
+            .then(response => {
+                console.log(response)
+                localStorage.clear()
+                props.history.push('/')
+                setUser(null)
+            })
     }
 
     if (user && parks && screenshots) {
@@ -60,7 +76,8 @@ const EditUser = (props) => {
                             <p>{screenshot.title}: <a href={editLink}>Edit</a></p>                            
                         </div>
                 })}
-                <br />
+                <h3>Not sure why you'd want to leave, but if you must...</h3>
+                <button onClick={handleLogout}>Logout</button>
                 <a href="/myrct/deleteaccount">Delete Account</a>
             </div>
         )
