@@ -45,6 +45,7 @@ const EditUser = (props) => {
         }).then(data => {
             console.log(data)
             setUser(data.user)
+            props.history.push("/myrct/profile")
         })
     }
 

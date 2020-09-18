@@ -1,4 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react'
+import { useHistory } from "react-router-dom"
 import styled from 'styled-components'
 import {UserContext} from '../UserContext'
 
@@ -8,6 +9,7 @@ import UserModel from '../models/user'
 
 const EditPark = (props) => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    //let history2 = useHistory()
 
     const [park, setPark] = useState(null)
     const [screenshots, setScreenshots] = useState(null)
@@ -58,6 +60,7 @@ const EditPark = (props) => {
             console.log(data)
             const editedParkId = data.park._id
             props.history.push(`/parks/${editedParkId}`)
+            //history2.push(`/parks/${editedParkId}`)
         })
     }
     
