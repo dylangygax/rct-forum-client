@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import UserModel from '../models/user'
-import Comment from './Comment'
-import NewComment from './NewComment'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
 import CommentModel from '../models/comment'
+import UserModel from '../models/user'
+
+import Comment from './Comment'
+import NewComment from './NewComment'
+import {UserContext} from '../UserContext'
 
 const Wrapper = styled.div`
     width: 50vw;
@@ -15,6 +17,8 @@ const Wrapper = styled.div`
 `
 
 const CommentSection = (props) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
     const [comments, setComments] = useState(props.comments)
     const [newComment, setNewComment] = useState(null)
     
@@ -44,7 +48,7 @@ const CommentSection = (props) => {
         console.log("in createComment")
         console.log(event.target.comment.value)
         const newComment = {
-            user: "5f62533c8510091624f74693",//temporarily hardcoded
+            user: loggedInUser,//"5f62533c8510091624f74693",//temporarily hardcoded
             body: event.target.comment.value,
         }
         if (props.contentType === "screenshot") {
@@ -66,17 +70,31 @@ const CommentSection = (props) => {
     }
 
     if (comments) {
-        return(
-            <Wrapper>
-                <h2>Comments:</h2>
-                <ul>
-                    {comments.map((comment, index) => {
-                        return <Comment key={index} comment={comment} user={comment.user} username={comment.username}/>
-                    })}
-                    <NewComment contentType={props.contentType} contentId={props.contentId} createComment={createComment}/>
-                </ul>
-            </Wrapper>
-        )
+        if (loggedInUser) {
+            return(
+                <Wrapper>
+                    <h2>Comments:</h2>
+                    <ul>
+                        {comments.map((comment, index) => {
+                            return <Comment key={index} comment={comment} user={comment.user} username={comment.username}/>
+                        })}
+                        <NewComment contentType={props.contentType} contentId={props.contentId} createComment={createComment}/>
+                    </ul>
+                </Wrapper>
+            )
+        } else {
+            return(
+                <Wrapper>
+                    <h2>Comments:</h2>
+                    <ul>
+                        {comments.map((comment, index) => {
+                            return <Comment key={index} comment={comment} user={comment.user} username={comment.username}/>
+                        })}
+                        <p><a href='/login'>Log In</a> or <a href='/register'>Register</a> to leave a comment.</p>
+                    </ul>
+                </Wrapper>
+            )
+        }
     } else {
         return(
             <p>..uh...loading comments..</p>
