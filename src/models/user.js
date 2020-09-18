@@ -15,7 +15,7 @@ export default class UserModel {
 
     //for creating a new user
     static create(data) {
-        return fetch(`${REACT_APP_API_URL}/users`, {
+        return fetch(`${REACT_APP_API_URL}/auth/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -11,11 +11,13 @@ import About from "../pages/about"
 import Login from "../pages/login"
 import Logout from "../pages/logout"
 import Protected from "../pages/protected"
+import Register from "../pages/register"
 
 export default(
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/register" component={Register}/>
             <Route exact path="/parks" component={Parks}/>
             <Route path="/parks/:id" component={Park}/>
             <Route exact path="/screenshots" component={Screenshots}/>
