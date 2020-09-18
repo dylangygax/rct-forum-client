@@ -10,11 +10,13 @@ import Logout from '../pages/logout'
 import NewPark from "../pages/newPark"
 import NewScreenshot from "../pages/newScreenshot"
 import Profile from "../pages/profile"
+import Welcome from "../pages/welcome"
 
 export default(
     <BrowserRouter>
         <Switch>
             <Route exact path="/myrct" component={EditUser}/>
+            <Route exact path="/myrct/welcome" component={Welcome}/>
             <Route exact path="/myrct/deleteaccount" component={DeleteUser}/>
             <Route exact path="/myrct/newscreenshot" component={NewScreenshot}/>
             <Route exact path="/myrct/newpark" component={NewPark}/>

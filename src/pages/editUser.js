@@ -37,8 +37,15 @@ const EditUser = (props) => {
         })
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault()
         console.log("in handle submit")
+        UserModel.update(user._id, {
+            bio: event.target.bio.value
+        }).then(data => {
+            console.log(data)
+            setUser(data.user)
+        })
     }
 
     const handleLogout = (event) => {

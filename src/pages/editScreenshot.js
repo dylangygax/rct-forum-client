@@ -56,8 +56,8 @@ const EditScreenshot = (props) => {
             //park: event.target.park.value
         }).then(data => {
             console.log(data)
-            const createdScreenshotId = data.screenshot._id
-            props.history.push(`/screenshots/${createdScreenshotId}`)
+            const editedScreenshotId = data.screenshot._id
+            props.history.push(`/screenshots/${editedScreenshotId}`)
         })
     }
     

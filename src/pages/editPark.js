@@ -56,8 +56,8 @@ const EditPark = (props) => {
             //park: event.target.park.value
         }).then(data => {
             console.log(data)
-            const createdParkId = data.park._id
-            props.history.push(`/parks/${createdParkId}`)
+            const editedParkId = data.park._id
+            props.history.push(`/parks/${editedParkId}`)
         })
     }
     
