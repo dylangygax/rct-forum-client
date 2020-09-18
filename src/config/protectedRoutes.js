@@ -6,7 +6,6 @@ import DeleteUser from "../pages/deleteUser"
 import EditPark from "../pages/editPark"
 import EditScreenshot from "../pages/editScreenshot"
 import EditUser from "../pages/editUser"
-import Example from "../pages/example"
 import Logout from '../pages/logout'
 import NewPark from "../pages/newPark"
 import NewScreenshot from "../pages/newScreenshot"

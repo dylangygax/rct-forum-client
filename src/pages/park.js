@@ -28,6 +28,7 @@ const Park = (props) => {
     console.log(props.match.params.id)
 
     useEffect(() => {
+        console.log("in here")
         fetchData()
     }, [])
 

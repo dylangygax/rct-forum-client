@@ -5,7 +5,7 @@ const Comment = (props) => {
 
     return(
         <div>
-            <a href={link}>{props.user}:</a>
+            <a href={link}>{props.username}:</a>
             <p>{props.comment.body}</p>
         </div>
     )

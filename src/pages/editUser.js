@@ -48,8 +48,8 @@ const EditUser = (props) => {
             .then(response => {
                 console.log(response)
                 localStorage.clear()
-                props.history.push('/')
                 setUser(null)
+                props.history.push('/')
             })
     }
 

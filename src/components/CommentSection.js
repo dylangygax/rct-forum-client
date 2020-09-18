@@ -71,7 +71,7 @@ const CommentSection = (props) => {
                 <h2>Comments:</h2>
                 <ul>
                     {comments.map((comment, index) => {
-                        return <Comment key={index} comment={comment} user={comment.username}/>
+                        return <Comment key={index} comment={comment} user={comment.user} username={comment.username}/>
                     })}
                     <NewComment contentType={props.contentType} contentId={props.contentId} createComment={createComment}/>
                 </ul>

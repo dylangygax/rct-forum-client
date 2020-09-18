@@ -30,7 +30,7 @@ const NewPark = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         ParkModel.create({
-            user: "5f62533c8510091624f74693",
+            user: loggedInUser,
             title: event.target.title.value,
             image: event.target.image.value,
             story: event.target.story.value,

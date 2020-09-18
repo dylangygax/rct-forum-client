@@ -24,6 +24,8 @@ const Header = (props) => {
             <NavLink href="/screenshots">Screenshots</NavLink>
             <NavLink href="/about">About</NavLink>
             <p>  </p>
+            <NavLink href="/myrct/newscreenshot">Add Screenshot</NavLink>
+            <NavLink href="/myrct/newpark">Add Park</NavLink>
             <NavLink href="/myrct/profile">Profile</NavLink>
             <NavLink href="/myrct">Settings</NavLink>
         </Wrapper>
